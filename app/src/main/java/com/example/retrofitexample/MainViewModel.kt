@@ -33,7 +33,7 @@ class MainViewModel(private val repository: Repository
         viewModelScope.launch(Dispatchers.IO) {
             Log.d("MainViewModel", Thread.currentThread().name)
             try{
-                val client = repository.getCharacters("1")
+                val client = repository.getCharacters("2")
                 _characterLiveData.postValue(ScreenState.Success(client.result))
             }catch (e: Exception){
                 Log.e("Error in API",e.message.toString())
