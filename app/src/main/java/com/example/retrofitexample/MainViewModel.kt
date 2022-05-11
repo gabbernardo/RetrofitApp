@@ -36,7 +36,7 @@ class MainViewModel(private val repository: Repository
                 val client = repository.getCharacters("2")
                 _characterLiveData.postValue(ScreenState.Success(client.result))
             }catch (e: Exception){
-                Log.e("Error in API",e.message.toString())
+                Log.e("Error in Server",e.message.toString())
                 _characterLiveData.postValue(ScreenState.Error(e.message.toString(), null))
             }
         }
